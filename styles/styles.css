@@ -2,7 +2,7 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    cursor: url('./images/cursor.png'),auto;
+    cursor: url('../images/cursor.png'),auto;
 }
 
 :root{
