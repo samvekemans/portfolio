@@ -449,7 +449,7 @@ footer>h3{
 
 @media (max-width: 32em){
     main>img{
-        content: url('/images/banner6.png'); 
+        content: url('../images/banner6.png'); 
     }
 
     main section:first-of-type{
