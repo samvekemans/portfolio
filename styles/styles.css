@@ -2,7 +2,7 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    cursor: url('../images/cursor.png'),auto;
+    cursor: url('./images/cursor.png'),auto;
 }
 
 :root{
@@ -176,12 +176,14 @@ main>section:nth-child(3)>article>article:hover{
 main>section:nth-child(3)>article>article h2{
     font-family: var(--hoofdfont);
     color: var(--wit);
+    font-size: 1.5em
 }
 
 main>section:nth-child(3)>article>article p{
     font-family: var(--hoofdfont);
     color: var(--wit);
     border-bottom: .1em solid var(--wit);
+    font-size: .7em;
 }
 
 
@@ -194,32 +196,31 @@ main>section>article{
 }
 
 
-#over-mij main section:first-of-type{
+#over-mij main section{
     position: relative;
     top: 0px;
     width: 90%;
     margin-top: 2em;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 
-#over-mij main section:first-of-type a{
-    position: absolute;
-    bottom: 10%;
-    left: 5%;
+#over-mij main h1{
+    font-family: var(--schrijffont);
+    font-size: 4em;
 }
 
-
-#over-mij main section:first-of-type article{
-    box-shadow: none;
-    padding: 2em;
+#over-mij main section a{
+   margin-right: auto;
 }
 
-#over-mij main section:first-of-type article p{
+#over-mij main section p{
     font-size: 1.7em;
-    font-weight: 300;
+    font-weight: 250;
     margin-top: 0.5em;
+    grid-column: 1;
+    columns: 2;
+    column-gap: 3em;
 }
 
 
@@ -230,7 +231,8 @@ main>section>article{
     left: 0em;
     width: 30em;
     height: 30em;
-    margin-right: 2em;
+    margin-left: auto;
+    
 }
 
 #over-mij main section:first-of-type h2{
@@ -244,24 +246,85 @@ main>section>article{
 
 
 footer{
-    display: flex;
     background-color: var(--blauw-footer);
-    justify-content: space-around;
-    align-items: center;
-    padding: 3em;
-    margin-top: 4em;
+    padding: 3em;  
+    margin-top: 3em;
 }
 
 footer img{
-    width: 30%;
+    width: 20%;
 }
 
-footer>h3{
+footer>article>h3{
     font-family: var(--schrijffont);
-    font-size: 5em;
+    font-size: 1.5em;
     color: var(--wit);
+    align-self: center;
 }
 
+footer>article{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#contact main section{
+    position: inherit;
+    top: 0px;
+    width: 90%;
+    margin: auto;
+    margin-top: 2em;
+}
+
+#contact main section form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+#contact main section form fieldset{
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+#contact main section form legend{
+    font-family: var(--hoofdfont);
+    font-weight: 400;
+}
+
+#contact main section form label{
+    font-family: var(--hoofdfont);
+    font-weight: 200;
+    margin-top: 1em;
+}
+
+#contact main section form input{
+    border: none;
+    box-shadow: var(--box-shadow);
+    margin-top: 1em;
+    width: 50%;
+    height: 2em;
+}
+
+#contact main section form fieldset input:last-of-type{
+    height: 6em;
+}
+
+#contact main section form>input{
+    background-color: var(--blauw);
+    width: 30%;
+    color: var(--wit);
+    font-family: var(--hoofdfont);
+    margin-top: 2em;
+}
+
+
+@media (max-width: 100em){
+    #over-mij main section p{
+        columns: 1;
+        font-size: 1.5em;
+    }
+}
 
 @media (max-width: 72em){
 
@@ -281,10 +344,20 @@ footer>h3{
     width: 28%;
     }
 
-    #over-mij main section:first-of-type{
-        flex-direction: column;
+    #over-mij main section:first-of-type img{
+        position: absolute;
+        top: 3em;
+        right: 2em;
+        width: 10em;
+        height: 10em;
+        border-radius: 50%;
+        border: var(--blauw) 5px solid;
+        box-shadow: var(--box-shadow);
     }
 
+    #over-mij main section{
+        grid-template-columns: auto 15em;
+    }
 }
 
 @media (max-width: 62em){
@@ -308,6 +381,9 @@ footer>h3{
     h2>span{
         display: initial;
     }
+    main>section:nth-child(3)>article>article h2{
+        font-size: 1em;
+    }
 }
 
 
@@ -328,15 +404,28 @@ footer>h3{
     main section:first-of-type img{
         width: 35%;
     }
+
+    main>section:nth-child(3){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #over-mij main section:first-of-type img{
+        top: 2em;
+        height: 8em;
+        width: 8em;
+    }
+    #over-mij main section:first-of-type{
+        grid-template-columns: auto 11em;
+    }
+
+    #contact main section form input{
+        width: 70%
+    }
 }
 
 @media (max-width: 45em){
     main>img{
         content: url('../images/banner3.png');  
-    }
-
-    main>section:nth-child(3){
-        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
@@ -359,7 +448,24 @@ footer>h3{
     main section:first-of-type{
         width: 70%;
     }
-    
+
+    main>section:nth-child(3){
+        grid-template-columns: 1fr 1fr;
+    }
+    #over-mij main section:first-of-type img{
+        top: 2em;
+        height: 7em;
+        width: 7em;
+    }
+    #over-mij main section:first-of-type{
+        grid-template-columns: auto 8em;
+    }
+    #over-mij main section p{
+        font-size: 1.2em;
+    }
+    #over-mij main section h1{
+        font-size: 3em;
+    }
 }
 
 @media (max-width: 35em){
@@ -369,11 +475,6 @@ footer>h3{
 
     main section:first-of-type{
         width: 75%;
-    }
-
-    main>section:nth-child(3){
-        grid-template-columns: 1fr; 
-        margin-top: 4em  
     }
 
     header{
@@ -410,7 +511,7 @@ footer>h3{
         right: 2em;
         z-index: 1;
         transform: translateX(-1000%);
-        transition: 1.5s;
+        transition: .5s;
     }
 
     header nav ul{
@@ -433,17 +534,17 @@ footer>h3{
         margin-right: 3em;
     }
 
-
-
-
-
-
-
-
-
-
-    
-    
+    #over-mij main section:first-of-type img{
+        top: 1em;
+        height: 5em;
+        width: 5em;
+    }
+    #over-mij main section:first-of-type{
+        grid-template-columns: 100%;
+    }
+    #contact main section form input{
+        width: 100%;
+    }
 }
 
 
@@ -455,7 +556,26 @@ footer>h3{
     main section:first-of-type{
         width: 90%;
     }
+
+    main>section:nth-child(3){
+        margin-top: 4em  
+    }
     
+}
+
+@media (max-width: 32em){
+    main>section:nth-child(3) {
+    margin-top: 5em;
+    grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (min-width: 87.5em) {
+    main section:first-of-type{
+        height: 40%;
+    }
 }
 
 

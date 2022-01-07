@@ -16,7 +16,7 @@
     <title>Sam Vekemans</title>
 </head>
 
-<body id="over-mij">
+<body id="contact">
     <header>
         <section>
             <img src="images/hamburger.png" alt="hamburgermenu" id="burger">
@@ -27,29 +27,34 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="over-mij.html">Over mij</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section>
-            <h1>Over Mij</h1>
-            <p>Ik ben Sam Vekemans, ik ben een student op de Hva.
-                Ik studeer CMD, dit is communicatie multimedia design. Dit houd in dat ik veel met designen van websites
-                bezig ben. Hierbij zijn we altijd bezig met hoe we de beste ervaring aan de gebruiker mee kunnen geven.
-                Ook zijn we veel bezig met programmeren.
-                Ik zelf hou erg van programmeren maar ook van het designen.
-                Ik zou het liefst alles doen, met de klant praten over zijn/haar ideeën, hierna een design voor hem/haar
-                maken. Hierna dit design gaan programmeren tot een werkende website.
-                Hierdoor zou ik bij het volledige proces van een website zijn. 
-                Ik vond vanaf dat ik erg jong was het al erg leuk om creatief bezig te zijn.
-                Het was voor mij altijd al het leukste om dit doormiddel van computers te doen.
-                Toen ik 14 was had ik mijn eigen computer gebouwd en was ik al vaak bezig met photoshop. 
-                Dus toen ik deze opleiding zag leek het mij al meteen leuk. </p>
+            <h1>Contact</h1>
 
-            <img src="images/ik.png" alt="">
-            <a href="index.html">Terug naar mijn werk</a>
+        <!--Hier begint het formulier van de contactpagina. Je moet hier je naam, e-mail en een bericht invullen.-->
+        <form method="post" action="">
+            <fieldset>
+                <legend>Heb je een vraag? Neem gerust contact met mij op!</legend>
+
+                <label for="name">Naam:</label>
+                <input type="text" id="name" required>
+
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required>
+
+                <label for="bericht">Bericht:</label>
+                <input type="text" id="bericht" required>
+            </fieldset>
+            <input type="submit" value="Verstuur">
+        </form>
+
+
         </section>
 
 
