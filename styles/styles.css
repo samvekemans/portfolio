@@ -2,7 +2,6 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    cursor: url('./images/cursor.png'),auto;
 }
 
 :root{
@@ -15,6 +14,8 @@
     --wit: #F8F7F1;
 }
 
+
+
 body{
     background-image: url("../images/achtergrond-naam.png");
     background-size: 10%;
@@ -23,7 +24,7 @@ body{
 
 header{
     padding:  2em;
-    background-color: #F8F7F1;
+    background-color: var(--wit);
     box-shadow: var(--box-shadow);
     display: flex;
     justify-content: space-between;
@@ -65,7 +66,6 @@ header>nav>ul>li{
 
 header>nav>ul>li>a{
     color: black;
-    background-color: none;
     padding: 0em;
     box-shadow: none;
     margin: auto;
@@ -92,18 +92,19 @@ img{
 
 /*styling van de eerste section in de main*/
 
+
+
 main>img:first-of-type{
-    background-color: var(--blauw);
+    width: 100%;
 }
 
 main section:first-of-type{
-    background-color: #F8F7F1;
+    background-color: var(--wit);
     width: 40%;
     padding: 2em;
     box-shadow: var(--box-shadow);
     position: absolute;
     top: 6em;
-  
 }
 
 main section:first-of-type h1{
@@ -126,10 +127,9 @@ main section:first-of-type a{
     text-decoration: none;
     grid-column: 1;
     margin-right:1em;
-    flex-grow: none;
 }
 
-main section:first-of-type img{
+#homepage main section:first-of-type img{
     border-radius: 50%;
     width: 30%;
     position: absolute;
@@ -141,20 +141,36 @@ span{
     display: block;
 }
 
-
 main>section:nth-child(3){
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5em;
     padding: 1em;
     margin-top: 2em;
+    width: min(95%, 110em);
+    margin-inline: auto;
+}
+
+main>section:nth-child(3)>article{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main>section:nth-child(3)>article:nth-child(1), 
+main>section:nth-child(3)>article:nth-child(4){
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
 }
 
 main>section:nth-child(3)>article{
     position: relative;
+    height: 100%;
+    margin: auto;
 }
 
-main>section:nth-child(3)>article>article{
+main>section:nth-child(3)>article>a>article{
     position: absolute;
     top: 0em;
     left: 0em;
@@ -169,17 +185,18 @@ main>section:nth-child(3)>article>article{
     transition: 0.5s;
 }
 
-main>section:nth-child(3)>article>article:hover{
+main>section:nth-child(3)>article>a>article:hover{
     opacity: 1;
+    box-shadow: var(--blauw) 0em 0em 1em .5em;
 }
 
-main>section:nth-child(3)>article>article h2{
+main>section:nth-child(3)>article>a>article h2{
     font-family: var(--hoofdfont);
     color: var(--wit);
     font-size: 1.5em
 }
 
-main>section:nth-child(3)>article>article p{
+main>section:nth-child(3)>article>a>article p{
     font-family: var(--hoofdfont);
     color: var(--wit);
     border-bottom: .1em solid var(--wit);
@@ -199,7 +216,7 @@ main>section>article{
 #over-mij main section{
     position: relative;
     top: 0px;
-    width: 90%;
+    width: min(90%, 90em);
     margin-top: 2em;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -219,7 +236,6 @@ main>section>article{
     font-weight: 250;
     margin-top: 0.5em;
     grid-column: 1;
-    columns: 2;
     column-gap: 3em;
 }
 
@@ -249,6 +265,8 @@ footer{
     background-color: var(--blauw-footer);
     padding: 3em;  
     margin-top: 3em;
+    position: relative;
+    bottom: 0px;
 }
 
 footer img{
@@ -273,6 +291,7 @@ footer>article{
     width: 90%;
     margin: auto;
     margin-top: 2em;
+    width: min(90%, 60em);
 }
 
 #contact main section form{
@@ -317,6 +336,178 @@ footer>article{
     font-family: var(--hoofdfont);
     margin-top: 2em;
 }
+
+/* best pizza ever*/
+
+#pizza>main section:first-of-type>article object{
+    height: 25em;
+    width: 100%;
+}
+
+#pizza>main section:first-of-type>article:nth-child(2)>p{
+    font-family: var(--hoofdfont);
+    font-weight: 200;
+    font-size: 1.7em;
+    margin-top: 1em;
+}
+
+#pizza>main section:first-of-type img{
+    width: 100%;
+}
+
+#pizza>main section:first-of-type>article:nth-child(3){
+    grid-column: span 2;
+}
+
+#pizza>main section:first-of-type>article:nth-child(4){
+    grid-column: span 2;
+    grid-row: span 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+}
+
+#pizza>main section:first-of-type>article:nth-child(4) img:first-of-type{
+    grid-column: 1;
+}
+
+#pizza>main section:first-of-type>article:nth-child(4) h3{
+    font-size: 1.5em;
+    font-family: var(--hoofdfont);
+}
+
+#pizza>main section:first-of-type>article:nth-child(2){
+    grid-row: span 2;
+}
+
+#pizza>main section:first-of-type{
+    position: inherit;
+    background: none;
+    box-shadow: none;
+    width: min(90%, 80em);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+}
+
+/*einde pizza*/
+
+/*boek*/
+
+#boek main>section:first-of-type{
+    position: inherit;
+    width: min(90%, 80em);
+    margin-inline: auto;
+    background: none;
+    box-shadow: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+}
+
+#boek main>section:first-of-type>article:nth-child(2){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#boek main>section:first-of-type>article:first-of-type img{
+    width: 100%;
+}
+
+#boek main>section:first-of-type>article:nth-child(4){
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
+}
+
+#boek main>section:first-of-type>article:nth-child(3){
+    grid-column: span 2;
+}
+
+#boek main>section:first-of-type>article:nth-child(4)>img{
+    box-shadow: var(--box-shadow);
+    width: 100%;
+}
+
+#boek main>section:first-of-type>article:last-of-type{
+    grid-column: span 3;
+}
+
+#boek main>section:first-of-type>article:last-of-type object{
+    width: 100%;
+    height: 40em;
+}
+
+#boek main>section:first-of-type>article>img:nth-child(6){
+    grid-column: span 1;
+}
+
+/*einde boek*/
+
+/*game*/
+
+#game main>section:first-of-type{
+    position: inherit;
+    width: min( 90%, 80em);
+    margin-inline: auto;
+    background: none;
+    box-shadow: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+}
+
+#game main>section:first-of-type>article:nth-child(4){
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+}
+
+#game main>section:first-of-type>article>img{
+    width: 100%;
+}
+
+#game main>section:first-of-type>article:nth-child(3){
+    grid-column: span 2;
+}
+
+#game main>section:first-of-type>article:nth-child(5){
+    grid-column: span 3;
+}
+
+#game main>section:first-of-type>article:nth-child(4) img{
+    margin: auto;
+    box-shadow: var(--box-shadow);
+}
+
+#game main>section:first-of-type>article:nth-child(5), 
+#game main>section:first-of-type>article:nth-child(6){ 
+    display: flex;
+    justify-content: center;
+
+}
+
+/*einde game*/
+
+/* volgende en terug button*/
+
+main>section:first-of-type>article:first-of-type{
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    padding: 1em 2em;
+    background: none;
+    box-shadow: none;
+}
+
+
+
 
 
 @media (max-width: 100em){
@@ -364,6 +555,12 @@ footer>article{
     main section:first-of-type{
         width: 50%;
         padding: 2em 1em;
+        position: relative;
+        top: 1em;
+    }
+
+    main>img:first-of-type{
+        position: absolute;
     }
 
     main section:first-of-type h1{
@@ -384,13 +581,12 @@ footer>article{
     main>section:nth-child(3)>article>article h2{
         font-size: 1em;
     }
+
+    
 }
 
 
 @media (max-width: 53em){
-    main>img{
-        content: url('../images/banner2.png');  
-    }
 
     h2>span{
         display: block;
@@ -421,19 +617,29 @@ footer>article{
     #contact main section form input{
         width: 70%
     }
-}
 
-@media (max-width: 45em){
-    main>img{
-        content: url('../images/banner3.png');  
+    #pizza main>section article,
+    #pizza>main section:first-of-type>article:nth-child(3),
+    #pizza>main section:first-of-type>article:nth-child(4){
+        grid-column: span 3;
+    }
+
+    #game main>section article,
+    #game main>section:first-of-type>article:nth-child(3){
+        grid-column: span 3;
+    }
+
+    #game main>section:first-of-type>article:nth-child(4){
+        grid-template-columns: 1fr;
+    }
+
+    #boek main>section:first-of-type>article,
+    #boek main>section:first-of-type>article:nth-child(3){
+        grid-column: span 3;
     }
 }
 
 @media (max-width: 45em){
-    main>img{
-        content: url('../images/banner3.png');  
-    }
-
     main section:first-of-type{
         width: 65%;
     }
@@ -441,9 +647,6 @@ footer>article{
 }
 
 @media (max-width: 39em){
-    main>img{
-        content: url('../images/banner4.png');  
-    }
 
     main section:first-of-type{
         width: 70%;
@@ -469,10 +672,7 @@ footer>article{
 }
 
 @media (max-width: 35em){
-    main>img{
-        content: url('../images/banner5.png');  
-    }
-
+ 
     main section:first-of-type{
         width: 75%;
     }
@@ -545,40 +745,42 @@ footer>article{
     #contact main section form input{
         width: 100%;
     }
+
+    #pizza>main section:first-of-type>article:nth-child(2)>p{
+        font-size: 1.5em;
+    }
+
+    #pizza>main section:first-of-type>article:nth-child(2)>h1{
+        font-size: 1.5em
+    }
+
+    #pizza>main section:first-of-type>article:nth-child(4){
+        grid-template-columns: 1fr;
+    }
+
+    main section:first-of-type>article a{
+        font-size: 0.8em;
+        padding: 0.7em;
+    }
+
+    section:first-of-type>article:first-of-type{
+        padding: 0em;
+    }
+
+    main>section>article{
+        padding: 1.5em;
+    }
+
 }
 
 
 @media (max-width: 32em){
-    main>img{
-        content: url('../images/banner6.png'); 
-    }
-
     main section:first-of-type{
         width: 90%;
     }
 
-    main>section:nth-child(3){
-        margin-top: 4em  
-    }
-    
-}
-
-@media (max-width: 32em){
-    main>section:nth-child(3) {
-    margin-top: 5em;
-    grid-template-columns: 1fr;
-    }
 
 }
-
-
-@media (min-width: 87.5em) {
-    main section:first-of-type{
-        height: 40%;
-    }
-}
-
-
 
 
 
